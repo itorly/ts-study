@@ -10,4 +10,3 @@ console.log("hex: " + hex);
 console.log("binary: " + binary);
 console.log("octal: " + octal);
 console.log("float: " + float);
-//# sourceMappingURL=Number.js.map

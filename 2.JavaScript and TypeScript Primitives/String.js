@@ -8,4 +8,3 @@ console.log("color: " + color);
 console.log("fullName: " + fullName);
 console.log("age: " + age);
 console.log("sentence: " + sentence);
-//# sourceMappingURL=String.js.map

@@ -5,3 +5,8 @@ when you run tsc filename.ts directly with a specific file, TypeScript ignores y
 # according to tsconfig.json, compile .ts files
 npx tsc
 ```
+
+```bash
+# run the .ts file directly
+npx ts-node filename.ts
+```

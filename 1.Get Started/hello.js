@@ -1,5 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function greet(name) {
-    return "Hello, ".concat(name, "!");
+    return `Hello, ${name}!`;
 }
-var message = greet("World");
+const message = greet("World");
 console.log(message);
+//# sourceMappingURL=hello.js.map

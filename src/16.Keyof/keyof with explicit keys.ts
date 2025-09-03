@@ -13,4 +13,4 @@ let person = {
   age: 27
 };
 
-printPersonProperty(person, "name"); // Printing person property name: "Max"s
+printPersonProperty(person, "name"); // Printing person property name: "Max"

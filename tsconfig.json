@@ -23,6 +23,7 @@
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
+    // enable null and undefined handling
     "strictNullChecks": true,
 
     // Style Options

@@ -24,3 +24,15 @@ let validHex: HexColor = "#ff0000";   // ✅ Valid
 // let invalidHex: HexColor = "#gggggg"; // ❌ Error!
 
 console.log(validHex)
+
+// Example 3: Dynamic API endpoints
+type HttpMethod = "GET" | "POST" | "PUT" | "DELETE";
+type ApiEndpoint<T extends HttpMethod> = `${T} /api/users`;
+
+let getEndpoint: ApiEndpoint<"GET"> = "GET /api/users";     // ✅ Valid
+let postEndpoint: ApiEndpoint<"POST"> = "POST /api/users";  // ✅ Valid
+// let wrongMethod: ApiEndpoint<"GET"> = "POST /api/users";    // ❌ Error!
+
+console.log(getEndpoint)
+console.log(postEndpoint)
+

@@ -36,3 +36,13 @@ let postEndpoint: ApiEndpoint<"POST"> = "POST /api/users";  // ✅ Valid
 console.log(getEndpoint)
 console.log(postEndpoint)
 
+// Example 4: File paths
+type FileType = "jpg" | "png" | "gif";
+type FilePath<T extends FileType> = `/images/${string}.${T}`;
+
+let jpgPath: FilePath<"jpg"> = "/images/photo.jpg"; // ✅ Valid
+let pngPath: FilePath<"png"> = "/images/graphic.png"; // ✅ Valid
+// let invalidPath: FilePath<"gif"> = "/images/animation.mp4"; // ❌ Error!
+
+console.log(jpgPath)
+console.log(pngPath)

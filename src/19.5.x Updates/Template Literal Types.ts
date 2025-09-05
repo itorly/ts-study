@@ -40,11 +40,17 @@ let cssVar: ColorVariable<"blue"> = "--color-blue";  // ✅ Valid
 console.log(cssVar)
 
 // Example 2: Stricter hex validation
-type HexDigit = "0"|"1"|"2"|"3"|"4"|"5"|"6"|"7"|"8"|"9"|"a"|"b"|"c"|"d"|"e"|"f";
-type HexColor = `#${HexDigit}${HexDigit}${HexDigit}${HexDigit}${HexDigit}${HexDigit}`;
+type HexColor = string & { readonly __brand: 'HexColor' };
 
-let validHex: HexColor = "#ff0000";   // ✅ Valid
-// let invalidHex: HexColor = "#gggggg"; // ❌ Error!
+function createHexColor(color: string): HexColor {
+  if (!/^#[0-9a-fA-F]{6}$/.test(color)) {
+    throw new Error('Invalid hex color format');
+  }
+  return color as HexColor;
+}
+
+let validHex = createHexColor("#ff0000");   // ✅ Runtime validation
+let invalidHex = createHexColor("#gggggg"); // ❌ Runtime error
 
 console.log(validHex)
 

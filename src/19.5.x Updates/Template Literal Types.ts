@@ -50,7 +50,7 @@ function createHexColor(color: string): HexColor {
 }
 
 let validHex = createHexColor("#ff0000");   // ✅ Runtime validation
-let invalidHex = createHexColor("#gggggg"); // ❌ Runtime error
+// let invalidHex = createHexColor("#gggggg"); // ❌ Runtime error
 
 console.log(validHex)
 

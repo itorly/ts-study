@@ -16,6 +16,10 @@ type Concrete<T> = {
   -readonly [K in keyof T]-?: T[K];
 };
 
+// Add 'readonly' and 'required' to all properties
+type ReadonlyRequired<T> = {
+  +readonly [K in keyof T]-?: T[K];
+};
 
 const t1: OptionalTodo = { title: "Learn TS" };
 console.log(t1.title);
@@ -28,3 +32,11 @@ console.log(String(t2.description));
 console.log(String(t2.completed));
 t2.title = "Modify Learn TS";
 console.log(t2.title);
+
+const t3: ReadonlyRequired<OptionalTodo> = { title: "Learn TS", description: "Learn TS destription", completed: false };
+console.log(t3.title);
+console.log(String(t3.description));
+console.log(String(t3.completed));
+// Error: Cannot assign to 'title' because it is a read-only property
+// t3.title = "Modify Learn TS";
+// console.log(t3.title);

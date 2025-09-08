@@ -1,11 +1,13 @@
-// infer keyword examples (runtime illustration)
-function add(a: number, b: number) {
-  return a + b;
-}
-console.log(add(2, 3));
+// Get return type of a function
+type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
 
-class Point {
-  constructor(public x: number, public y: number) {}
-}
-const p = new Point(4, 5);
-console.log(p.x, p.y);
+// Get parameter types as a tuple
+type Parameters<T> = T extends (...args: infer P) => any ? P : never;
+
+// Get constructor parameter types
+type ConstructorParameters<T extends new (...args: any) => any> =
+  T extends new (...args: infer P) => any ? P : never;
+
+// Get instance type from a constructor
+type InstanceType<T extends new (...args: any) => any> =
+  T extends new (...args: any) => infer R ? R : any;
